@@ -15,9 +15,11 @@ func main() {
 	ctx := context.Background()
 
 	for {
+		time.Sleep(1 * time.Second)
+
 		windowID, err := getWindowID(ctx)
 		if err != nil {
-			log.Fatal(err)
+			log.Print(err)
 			continue
 		}
 
@@ -34,8 +36,6 @@ func main() {
 		}
 
 		fmt.Print("\n")
-
-		time.Sleep(1 * time.Second)
 	}
 }
 
